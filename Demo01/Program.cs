@@ -393,11 +393,6 @@ namespace Demo01
                 else
                     break; // exit loop
             }
-
-
-
-
-
             #endregion
         }
     }
