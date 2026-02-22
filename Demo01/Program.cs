@@ -351,6 +351,11 @@ namespace Demo01
             //        break;
             //}
             #endregion
+            #region Calculater
+            //take number then opertation then number and show result
+            //calculater do (+ - * / %)
+            //write program to do that and make it protictive
+            #endregion
             #endregion
 
             #region loops statment
@@ -366,6 +371,7 @@ namespace Demo01
             //Console.WriteLine("9");
             //Console.WriteLine("10");
 
+            #region For
             ///1. for loop
             // for (start; end; increment | decrement )
             //start = 1
@@ -373,26 +379,165 @@ namespace Demo01
             //execute body
             //increment i to 2
             //end => if true go to body
-            int i = 1; // start
-            for (; ; )
-            {
-                if (i <= 10)
-                {
-                    if (i % 2 == 1)
-                    {
-                        Console.WriteLine(i);
-                        ++i;
-                    }
-                    else
-                    {
-                        ++i;
-                        continue; // skip current iteration and go to end of loop
-                    }
-                    
-                }
-                else
-                    break; // exit loop
-            }
+
+            //for (int i = 0; i <= 10 ; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            //int i = 1; // start
+            //for (; ; )
+            //{
+            //    if (i <= 10)
+            //    {
+            //        if (i % 2 == 1)
+            //        {
+            //            Console.WriteLine(i);
+            //            ++i;
+            //        }
+            //        else
+            //        {
+            //            ++i;
+            //            continue; // skip current iteration and go to end of loop
+            //        }
+
+            //    }
+            //    else
+            //        break; // exit loop
+            //} 
+            #endregion
+
+            #region while
+            ///2. while 
+            //Console.WriteLine("insert 0 if you want to continue");
+            //string input = Console.ReadLine();
+            //while(input == "0")
+            //{
+            //    Console.WriteLine("hello");
+            //    Console.WriteLine("insert 0 if you want to continue or any key if you want to exist");
+            //    input = Console.ReadLine();
+            //}
+
+
+            //while (reader.Read())
+            //{ 
+
+            //}
+
+            //while (true)
+            //{
+            //    //Console.WriteLine("insert first number");
+            //    //double num1;
+            //    //while (!double.TryParse(Console.ReadLine(), out num1))
+            //    //{
+            //    //    Console.WriteLine("wrong foramt, please insert first number");
+            //    //}
+            //    //Console.WriteLine("insert opration");
+            //    //var op1 = Console.ReadLine();
+            //    //Console.WriteLine("insert seconed number");
+            //    //var num2 = Console.ReadLine();
+            //    //var result = 0;
+            //    //Console.WriteLine($"Eqution: {num1} {op1} {num2} = {result}");
+            //    //Console.WriteLine("**********************************************");
+            //}
+            #endregion
+
+            #region do while
+            //for (int i = 11; i <= 10 ; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //int i = 11;
+            //do
+            //{
+            //    Console.WriteLine(i);
+            //    i++;
+            //} while (i <= 10);
+
+            //int choice;
+            //do
+            //{
+            //    Console.WriteLine("insert (1) to add");
+            //    Console.WriteLine("insert (2) to Exit");
+            //    choice = int.Parse(Console.ReadLine());
+            //}while (choice != 2);
+            #endregion
+
+            #region Foreach
+            //List<string> names = new List<string>()
+            //{
+            //    "ali",
+            //    "ahmed",
+            //    "sara"
+            //};
+            //for (int i = 0; i < names.Count; i++)
+            //{
+            //    names[i] = "t";
+            //    Console.WriteLine(names[i]);
+            //}
+            ////VS
+
+            ////collections
+            //foreach (var item in names)
+            //    item = "t";//not valid
+            #endregion
+            #endregion
+
+            #region block scope
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            ////Console.WriteLine(i); // out of scope
+
+            //while (double.TryParse(Console.ReadLine(), out double x))
+            //{
+
+            //}
+            ////x = 3;// out of scope
+
+            //if (double.TryParse(Console.ReadLine(), out double x))
+            //{
+            //    int y = 0;
+            //    Console.WriteLine(x);
+            //}
+            //Console.WriteLine("hello");
+            ////y = 0; // not valid
+            //x = 3;
+
+            //{
+            //    int z = 0;
+            //}
+
+            #endregion
+
+            #region Arrays - one D Array
+            //array is reference type
+            //int[] numbers;
+            // Declare for Reference from Type "Array of Integrs"
+            // Refering to the default value of Reference Type = NULL
+            // CLR Will Allocate 4 Bytes for The Reference at STACK
+            // CLR Will Allocate Zero Bytes at HEAP  
+
+
+            //numbers = new int[5];
+            // CLR Allocate 20 Bytes at HEAP,
+            // Intiailized with the default value of int = 0
+
+            //int[] numbers1 = { 1, 2, 3, 4, 5 };
+            //int[] numbers2 = new int[5] { 1, 2, 3, 4, 5 };
+            //int[] numbers3 = new int[] { 1, 2, 3, 4, 5 };
+
+            //numbers[4] = 1;
+            //numbers[5] = 2; //invalid
+            //Console.WriteLine($"the size of array = {numbers.Length} , the number of dimensions = {numbers.Rank}");
+
+
+            ///read elments of arry from user 
+            ///print elemnts of arry to user
+            ///write program to do that with protictive code and readable messages
+
+
             #endregion
         }
     }
