@@ -229,7 +229,8 @@ namespace Demo01
             //int a = 20, b = 10, c = 15, d = 5, e;
             //e = (a + b) * c / d; // e = (20+10) * 15 / 5; // e = 30 * 15 / 5; // e = 450 / 5; // e = 90
             //e = ((--a + b) * c) / d; // a=19 , e = (19+10) * 15 / 5; // e = 29 * 15 / 5; // e = 435 / 5; // e = 87
-            //e = --a + b * c / d; 
+            // e = --a + b * c / d; // a = 19 , e = 19 + 10 * 15 / 5; // e = 19 + 150 / 5; // e = 19 + 30; // e = 49
+            //Console.WriteLine(e);
             #endregion
             #endregion
 
@@ -355,6 +356,48 @@ namespace Demo01
             //take number then opertation then number and show result
             //calculater do (+ - * / %)
             //write program to do that and make it protictive
+            //int num1, num2;
+            //char op;
+            //double result;
+
+            //Console.WriteLine("enter first number");
+            //if (!int.TryParse(Console.ReadLine(), out num1))
+            //{
+            //    Console.WriteLine("invalid format for first number");
+            //    return;
+            //}
+            //Console.WriteLine("enter operation (+ - * / %)");
+            //if (!(char.TryParse(Console.ReadLine(), out op)
+            //    &&
+            //    (op == '+' || op == '-' || op == '*' || op == '/' || op == '%')))
+            //{
+            //    Console.WriteLine("invalid format for operation");
+            //    return;
+            //}
+
+            //Console.WriteLine("enter last number");
+            //if (!int.TryParse(Console.ReadLine(), out num2))
+            //{
+            //    Console.WriteLine("invalid format for last number");
+            //    return;
+            //}
+            //else if ((op == '/' || op == '%') && num2 == 0)
+            //{
+            //    Console.WriteLine("can not divide by zero");
+            //    return;
+            //}
+
+            //switch (op)
+            //{
+            //    case '+': result = num1 + num2; break;
+            //    case '-': result = num1 - num2; break;
+            //    case '*': result = num1 * num2; break;
+            //    case '/': result = (double)num1 / num2; break;
+            //    case '%': result = num1 % num2; break;
+            //    default: return;
+
+            //}
+            //Console.WriteLine($"{num1} {op} {num2} = {result}");
             #endregion
             #endregion
 
@@ -481,6 +524,44 @@ namespace Demo01
             //foreach (var item in names)
             //    item = "t";//not valid
             #endregion
+
+            #region EX00
+            //int num1, num2;
+            //char op;
+            //double result;
+            //do
+            //{
+            //    Console.WriteLine("enter first number");
+            //} while (!int.TryParse(Console.ReadLine(), out num1));
+
+            //do
+            //{
+            //    Console.WriteLine("enter operation (+ - * / %)");
+            //} while (!(char.TryParse(Console.ReadLine(), out op)
+            //    &&
+            //    (op == '+' || op == '-' || op == '*' || op == '/' || op == '%')));
+
+            //do
+            //{
+            //    Console.WriteLine($"enter last number{(op == '/' || op == '%' ? " and make sure not be zero" : "")}");
+            //} while (
+            //!int.TryParse(Console.ReadLine(), out num2)
+            //||
+            //((op == '/' || op == '%') && num2 == 0));
+
+
+            //switch (op)
+            //{
+            //    case '+': result = num1 + num2; break;
+            //    case '-': result = num1 - num2; break;
+            //    case '*': result = num1 * num2; break;
+            //    case '/': result = (double)num1 / num2; break;
+            //    case '%': result = num1 % num2; break;
+            //    default: return;
+
+            //}
+            //Console.WriteLine($"{num1} {op} {num2} = {result}");
+            #endregion
             #endregion
 
             #region block scope
@@ -511,7 +592,8 @@ namespace Demo01
 
             #endregion
 
-            #region Arrays - one D Array
+            #region Arrays
+            #region one D Array
             //array is reference type
             //int[] numbers;
             // Declare for Reference from Type "Array of Integrs"
@@ -537,7 +619,112 @@ namespace Demo01
             ///print elemnts of arry to user
             ///write program to do that with protictive code and readable messages
 
+            //int[] numbers = new int[5];
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    /*Console.WriteLine($"enter the {i + 1} element of array");
+            //    if (!int.TryParse(Console.ReadLine(), out numbers[i]))
+            //    {
+            //        Console.WriteLine("invalid input");
+            //        i--;
+            //    }*/
 
+            //    Console.WriteLine($"enter the {i + 1} element of array");
+            //    while (!int.TryParse(Console.ReadLine(), out numbers[i]))
+            //    {
+            //        Console.WriteLine("invalid input");
+            //    }
+
+            //    /* do
+            //     {
+            //         Console.WriteLine($"enter the {i + 1} element of array");
+            //     } while (!int.TryParse(Console.ReadLine(), out numbers[i]));*/
+            //}
+
+            //foreach (int i in numbers)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            #endregion
+            #region Two D Array [Rectangular]
+            //int[,] Marks;
+            //Marks = new int[3, 5];
+            //Console.WriteLine($"the size of array = {Marks.Length} , the number of dimensions = {Marks.Rank}");
+            //Console.WriteLine($"number of rows = {Marks.GetLength(0)} , number of column = {Marks.GetLength(1)}");
+
+
+            ///read elments of arry from user 
+            ///print elemnts of arry to user
+            ///write program to do that with protictive code and readable messages
+            //for (int i = 0; i < Marks.GetLength(0); i++)
+            //    for (int j = 0; j < Marks.GetLength(1); j++)
+            //    {
+            //        Console.WriteLine($"insert array elemnt Marks[{i},{j}]");
+            //        while (!int.TryParse(Console.ReadLine(), out Marks[i, j]))
+            //        {
+            //            Console.WriteLine("invalid input please reenter valid data");
+            //        }
+            //    }
+
+            //for (int i = 0; i < Marks.Length; i++)
+            //{
+            //    int row = i / Marks.GetLength(1); // currnt row
+            //    int column = i % Marks.GetLength(1); // currnt column
+            //    Console.WriteLine($"insert array elemnt Marks[{row},{column}]");
+            //    while (!int.TryParse(Console.ReadLine(), out Marks[row, column]))
+            //    {
+            //        Console.WriteLine("invalid input please reenter valid data");
+            //    }
+            //}
+
+            //foreach (int i in Marks)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            #endregion
+            #region Two D Array [Judged]
+            //int[][,] numbers;
+            //numbers = new int[3][,];
+
+            //numbers[0] = new int[3, 5]; //num1 => arr
+            //numbers[1] = new int[1, 3]; //num2 => arr
+            //numbers[2] = new int[2, 1]; //num3 => arr
+
+            //Console.WriteLine($"the size of array = {numbers.Length} , the number of dimensions = {numbers.Rank}");
+            //Console.WriteLine($"the size of array = {numbers[0].Length} , the number of dimensions = {numbers[0].Rank}");
+            //Console.WriteLine($"number of rows = {numbers[0].GetLength(0)} , number of column = {numbers[0].GetLength(1)}");
+
+            //for ( int j = 0; j < numbers.Length; j++)
+            //{
+            //    for (int i = 0; i < numbers[j].Length; i++)
+            //    {
+            //        int row = i / numbers[j].GetLength(1); // currnt row
+            //        int column = i % numbers[j].GetLength(1); // currnt column
+            //        Console.WriteLine($"insert array elemnt numbers[{j}][{row},{column}]");
+            //        while (!int.TryParse(Console.ReadLine(), out numbers[j][row, column]))
+            //        {
+            //            Console.WriteLine("invalid input please reenter valid data");
+            //        }
+            //    }
+            //}
+
+            //foreach (var arr in numbers)
+            //{
+            //    foreach(int i in arr)
+            //        Console.WriteLine(i);
+            //}
+
+            //Point[] points = new Point[5];
+            //points[0] = new Point(); //p1 = new point();
+            //points[0].X = 10; //p1.x = 10;
+            //points[0].Y = 10; //p1.y = 10;
+
+            //points[1] = new Point(); // p2 = new point();
+            //points[1].X = 10; //p2.x = 10;
+            //points[1].Y = 10; //p2.y =10;
+            #endregion
             #endregion
         }
     }
