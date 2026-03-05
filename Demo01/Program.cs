@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections;
+using System.Text;
 
 namespace Demo01
 {
@@ -725,6 +726,166 @@ namespace Demo01
             //points[1].X = 10; //p2.x = 10;
             //points[1].Y = 10; //p2.y =10;
             #endregion
+            #region Array Methods
+            //int[] numbers = { 8, 3, 4, 5, 6, 7, 9, 7, 1, 3 };
+            #region 1. Class Member Methods [Static Methods]
+            //Array.Sort(numbers);
+            //Array.Reverse(numbers);
+            //Array.Clear(numbers);
+
+            //Point[] newarr = new Point[3];
+            //newarr[0] = new Point();
+            //newarr[1] = new Point();
+            //newarr[2] = new Point();
+            //Array.Clear(newarr);
+
+            // Console.WriteLine(Array.IndexOf(numbers,7)); // find first index
+            // Console.WriteLine(Array.LastIndexOf(numbers,7)); // find last index
+            //var arr =  Array.CreateInstance(typeof(int), 10); //int[] arr = new int[];
+            #endregion
+            #region 2. Object Member Methods [Non-Static Methods]
+            //int[] newarr = new int[15];
+            //numbers.CopyTo(newarr, 2);
+            //numbers.SetValue(18, 5);
+            //Console.WriteLine(numbers[5]);
+
+            //int[] dest = new int[numbers.Length];
+            //numbers.CopyTo(dest, 0);
+
+
+            //var dest = Array.CreateInstance(numbers.GetType().GetElementType(), numbers.Length);
+            //numbers.CopyTo(dest, 0);
+            #endregion
+            //foreach (var i in dest)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+
+            ///Ex01: write a program find the longest distance between 
+            ///Two equal cells.
+            ///In this example.The distance is 
+            ///measured by the number Of cells- for example
+
+            //int size;
+            //Console.WriteLine("enter size of array");
+            //while (!int.TryParse(Console.ReadLine(), out size) || size < 1)
+            //{
+            //    Console.WriteLine("wrong format, enter size of array");
+            //}
+            //int[] arr = new int[size];
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    Console.WriteLine($"enter the {i + 1} element of array");
+            //    while (!int.TryParse(Console.ReadLine(), out arr[i]))
+            //    {
+            //        Console.WriteLine($"wrong format, enter the {i + 1} element of array");
+            //    }
+            //}
+
+            //int maxdist = -1;
+            //foreach (int i in arr)
+            //{
+            //    int dist = Array.LastIndexOf(arr, i) - Array.IndexOf(arr, i) - 1;
+            //    if(dist > maxdist)
+            //        maxdist = dist;
+            //}
+
+            //Console.WriteLine(maxdist);
+
+            #endregion
+            #endregion
+
+            #region Boxing vs UnBoxing 
+            //// Boxing   : Casting from ValueType to ReferenceType
+            //// UnBoxing : Casting from ReferenceType to ValueType
+
+            //int is object
+            //int x = 10;
+            //object obj = x; // boxing => copy of data saved in x
+            //x = 20;
+            //Console.WriteLine(obj);
+
+            //object[] data = new object[3];
+            //data[0] = 10; //boxing 
+            //data[1] = 3200.50m; //boxing
+            //data[2] = "ali"; //not boxing
+
+            //ArrayList list = new ArrayList();
+            //list.Add(10); //boxing
+
+            //List<int> ints = new List<int>();
+            //ints.Add(10);
+
+            ///unboxing
+            //object obj = 10;
+            //int x =(int) obj; //explict casting
+            //Console.WriteLine(x);
+            //double x =(double) obj;
+            //Console.WriteLine(x);
+            //int a = 10;
+            //double b = a;
+
+            //object O1 = new object();
+            //O1 = "Ahmed"; //not boxing
+
+            //O1 = 5;    // int[ValueType] to object[ReferenceType] -> Boxing
+            //O1 = 'A';  // char[ValueType] to object[ReferenceType] -> Boxing
+            //O1 = 3.3;  // double[ValueType] to object[ReferenceType] -> Boxing
+            //O1 = true; // bool[ValueType] to object[ReferenceType] -> Boxing
+            //O1 = new DateTime();  // DateTime[ValueType] to object[ReferenceType] -> Boxing
+            //O1 = new DateOnly(); // DateOnly[ValueType] to object[ReferenceType] -> Boxing
+            //O1 = new TimeOnly(); // TimeOnly[ValueType] to object[ReferenceType] -> Boxing
+
+            #endregion
+
+            #region nullable types
+            // NullableTypes : ValueTypes allows NULL as a Value
+            // Assign Null as a Value for ValueType[int, char, bool, decimal, etc] Variables
+
+
+            //int age = null; //invalid
+            //int age = 0;
+
+            //int? age = null; //nullable integer : allow int value + null
+            //double? age1 = null;//nullable double : allow dounble value + null
+
+            //int x = 8;
+            //int? y = x;
+            //y = null;
+            ////x =(int) y; //explicit
+
+            //if (y is not null)
+            //    x =(int) y;
+
+            //if (y.HasValue)
+            //    x = y.Value;
+
+            //x = y.HasValue ? y.Value : 0;
+
+            /////null coalescing operator
+            //x = y ?? 0;
+            #endregion
+
+            #region null propagation operator
+            //int x = default; //0
+            //int[] arr = default; //null
+
+            //int length; //= arr.Length; //runtime error
+            //if (arr is not null)
+            //    length = arr.Length;
+
+            //if (arr is not null)
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        Console.WriteLine(arr[i]);
+            //    }
+
+            //int? length = arr?.Length;
+            //int length = arr?.Length ?? 0;
+
+            // employee?.department?.deptname ?? "N/A"
+
             #endregion
         }
     }
