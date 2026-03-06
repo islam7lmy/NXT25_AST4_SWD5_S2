@@ -887,6 +887,186 @@ namespace Demo01
             // employee?.department?.deptname ?? "N/A"
 
             #endregion
+
+            #region Functions
+            #region prototype and calling
+            //print line of 10 element of "#";
+            //PrintLine();
+
+            //print line of number inserted by user and pattern inserted by user
+            //PrintLine(20,"$"); //passing parameters by postion 
+            //PrintLine(pattern: "$",number: 20); //passing parameters by names 
+            //PrintLine(, "$"); //invalid
+            //PrintLine(pattern: "$"); //passing parameters by names
+            #endregion
+
+            #region value type
+            //class memeber method function take two numbers and swap them
+            //int x = 9; int y = 4;
+            //Console.WriteLine($"before swap: x = {x} , y = {y}"); //9 ,4
+            //SwapByValue(x, y);
+            //Console.WriteLine($"after swap: x = {x} , y = {y}"); //9 ,4
+
+            //Console.WriteLine("***********************By ref******************");
+
+            //Console.WriteLine($"before swap: x = {x} , y = {y}"); //9 ,4
+            //SwapByRef(ref x,ref y);
+            //Console.WriteLine($"after swap: x = {x} , y = {y}"); //9 ,4
+            #endregion
+
+            #region reference type
+            //write class memeber method take arr of int one diminssion and return sum of array element
+            //int[] numarr = { 3, 5, 6 };
+            //Console.WriteLine($"hashcode = {numarr.GetHashCode()}");
+            //Console.WriteLine("******************passing by value********************");
+            ////Console.WriteLine(SumArrayByValue(numarr)); //14
+            ////Console.WriteLine(numarr[0]); //3 / 10 => 10
+            //SumArrayByValue(numarr);
+            //Console.WriteLine($"hashcode = {numarr.GetHashCode()}");
+            //Console.WriteLine($"after initilize {numarr[0]}"); //3 / 1 => 3
+
+            //Console.WriteLine("******************passing by ref********************");
+            ////Console.WriteLine(SumArrayByRef(ref numarr)); //14
+            ////Console.WriteLine(numarr[0]); //3 / 20 => 20 
+            //SumArrayByRef(ref numarr);
+            //Console.WriteLine($"hashcode = {numarr.GetHashCode()}");
+            //Console.WriteLine($"after initilize {numarr[0]}"); //3 / 1 => 1
+            #endregion
+
+            #region passing by out
+            //write class memeber method to take two integer numbers and return sum and mul
+            int a = 1 , b = 2 , sum , mul;
+            //SumMul(a, b, out sum, out mul);
+            //SumMul(a, b, out _, out mul);
+
+            //SumMulByOut(a, b, out sum, out mul);
+
+            //SumMulByRef(a, b, ref sum, ref mul);
+            #endregion
+            #endregion
         }
+
+
+        #region Functions
+
+        #region prototype and calling
+        /// <summary>
+        /// object memeber method
+        /// </summary>
+        //public void PrintLine() 
+        //{
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        Console.Write("#");
+        //    }
+        //    Console.WriteLine("");
+        //}
+
+
+        /// <summary>
+        /// class memeber method
+        /// </summary>
+        //public static void PrintLine()
+        //{
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        Console.Write("#");
+        //    }
+        //    Console.WriteLine("");
+        //}
+
+        //public static void PrintLine(int number, string pattern)
+        //{
+        //    for (int i = 0; i < number; i++)
+        //    {
+        //        Console.Write(pattern);
+        //    }
+        //    Console.WriteLine("");
+        //}
+
+        //public static void PrintLine(int number = 10, string pattern = "#")
+        //{
+        //    for (int i = 0; i < number; i++)
+        //    {
+        //        Console.Write(pattern);
+        //    }
+        //    Console.WriteLine("");
+        //}
+        #endregion
+
+        #region value type
+
+        /// passing by value
+        //static void SwapByValue(int num1 , int num2)
+        //{
+        //    Console.WriteLine($"inner function,before Swap By Value: x = {num1} , y = {num2}");
+        //    int temp = num1;
+        //    num1 = num2;
+        //    num2 = temp;
+        //    Console.WriteLine($"inner function,after Swap By Value: x = {num1} , y = {num2}");
+        //}
+
+        ///// passing by ref
+        //static void SwapByRef(ref int num1,ref int num2)
+        //{
+        //    Console.WriteLine($"inner function,before Swap By Ref: x = {num1} , y = {num2}");
+        //    int temp = num1;
+        //    num1 = num2;
+        //    num2 = temp;
+        //    Console.WriteLine($"inner function,after Swap By Ref: x = {num1} , y = {num2}");
+        //}
+
+        #endregion
+
+        #region reference type
+        ////passing by value
+        //static int SumArrayByValue(int[] Arr)
+        //{
+        //    int sum = 0;
+        //    Arr = new int[3] { 1, 2, 3 };
+        //    foreach (int i in Arr)
+        //    {
+        //        sum += i;
+        //    }
+        //    //Arr[0] = 10;
+        //    return sum;
+        //}
+
+        ////passing by ref
+        //static int SumArrayByRef(ref int[] Arr)
+        //{
+        //    int sum = 0;
+        //    Arr = new int[3] { 1, 2, 3 };
+        //    foreach (int i in Arr)
+        //    {
+        //        sum += i;
+        //    }
+        //   // Arr[0] = 20;
+        //    return sum;
+        //}
+        #endregion
+
+        #region passing out
+        //static void SumMulByOut (int x, int y,out int sum,out int mul)
+        //{
+        //    //sum = default;
+        //    //mul = default;
+        //    sum = x + y;
+        //    mul = x * y;
+        //}
+
+        //static void SumMulByRef(int x, int y, ref int sum, ref int mul)
+        //{
+        //    //sum = default;
+        //    //mul = default;
+        //    //sum = x + y;
+        //    //mul = x * y;
+        //}
+        #endregion
+
+        #region parms
+
+        #endregion
+        #endregion
     }
 }
