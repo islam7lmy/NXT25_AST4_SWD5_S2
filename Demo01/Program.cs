@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Demo01
@@ -935,7 +936,7 @@ namespace Demo01
 
             #region passing by out
             //write class memeber method to take two integer numbers and return sum and mul
-            int a = 1 , b = 2 , sum , mul;
+            //int a = 1 , b = 2 , sum , mul;
             //SumMul(a, b, out sum, out mul);
             //SumMul(a, b, out _, out mul);
 
@@ -943,9 +944,58 @@ namespace Demo01
 
             //SumMulByRef(a, b, ref sum, ref mul);
             #endregion
+
+            #region Params
+            //int[] newarr = new int[] { 1, 2, 3, 4, 5, 6 };
+            //SumArray(newarr);
+
+            //Console.WriteLine(SumArray(new int[] { 1, 2, 3, 4, 5, 6 }));
+
+            //Console.WriteLine(SumArrayWithParams(1, 2, 3, 4, 5, 6));
+
+            #region Ex : Enum + params
+            //CalculateBill(14, 12, Menu.Pizaa, Menu.Juice, Menu.Salad, Menu.Dessert);
+            #endregion
+            #endregion
+            #endregion
+
+            #region Exceptions Handling
+            //try
+            //{
+            //    DoSomeCode();
+            //}
+            ////catch (Exception ex)
+            ////{
+            ////    //throw;
+            ////    Console.WriteLine(ex.Message);
+            ////}
+            //finally
+            //{
+            //    //[Release | Deallocate | Delete | Close] unmanaged resources (databaseconnection , file)
+            //    Console.WriteLine("finally");
+            //}
+            //Console.WriteLine("program is still running");
+            #endregion
+
+            #region Enums
+            #region Ex01
+            //Days day = Days.thr;
+            //Console.WriteLine(day.ToString());
+            //Console.WriteLine((int)day);
+            //day =(Days) 10;
+            //Console.WriteLine(day.ToString());
+            //Point p1 = new Point();
+            //Console.WriteLine(p1.ToString()); 
+            #endregion
+
+            #region Ex02
+            //Console.WriteLine((int) Gender.Male);
+            //Console.WriteLine((int) Gender.male);
+            //Console.WriteLine((int) Gender.M);
+            //Console.WriteLine((int) Gender.m);
+            #endregion
             #endregion
         }
-
 
         #region Functions
 
@@ -1064,9 +1114,157 @@ namespace Demo01
         //}
         #endregion
 
-        #region parms
+        #region params
+        //static int SumArray(int[] arr)
+        //{
+        //    int sum = 0;
+        //    foreach (int i in arr)
+        //    {
+        //        sum += i;
+        //    }
+        //    return sum;
+        //}
+
+        //static int SumArrayWithParams(string x, params int[] arr)
+        //{
+        //    int sum = 0;
+        //    foreach (int i in arr)
+        //    {
+        //        sum += i;
+        //    }
+        //    return sum;
+        //}
+
+        #region Ex : Enum + params
+        ///class member method take tax and service and all ordered items 
+        ///print the shape as bellow:
+        /// order details :
+        /// pizza : 120
+        /// juice : 60
+        /// ـــــــــــــــــــ
+        /// total item : 180
+        /// tax : (total item * (tax / 100))
+        /// service : (total item * (service  / 100))
+        /// ـــــــــــــــــــ
+        /// total oreder : total + tax + service
+        /// return total + tax + service;
+
+        //static double CalculateBill(int tax, int service,params Menu[] items)
+        //{
+        //    double total = 0, taxinmony = 0 , serviceinmony = 0;
+        //    Console.WriteLine("order details :");
+        //    foreach (Menu item in items)
+        //    {
+        //        Console.WriteLine($"{item} : {(int)item}");
+        //        total += (int)item;
+        //    }
+        //    Console.WriteLine("ــــــــــــــــــ");
+        //    Console.WriteLine($"total items : {total}");
+        //    taxinmony = (total * ((double)tax / 100));
+        //    Console.WriteLine($"tax : {taxinmony}");
+        //    serviceinmony = (total * ((double)service / 100));
+        //    Console.WriteLine($"service : {serviceinmony}");
+        //    Console.WriteLine("ــــــــــــــــــ");
+        //    total += taxinmony + serviceinmony;
+        //    Console.WriteLine($"total order :{total}");
+        //    return total;
+        //}
 
         #endregion
         #endregion
+        #endregion
+
+        #region Exceptions Handling
+        //static void DoSomeCode()
+        //{
+        //    int x, y, z;
+
+        //    Console.WriteLine("please enter first number: ");
+        //    x = int.Parse(Console.ReadLine());
+
+        //    Console.WriteLine("please enter last number: ");
+        //    y = int.Parse(Console.ReadLine());
+
+        //    z = x / y;
+
+        //    Console.WriteLine($"result is : {z}");
+
+        //    int[] arr = { 1, 2, 3 };
+
+        //    Console.WriteLine("please enter index number to change it's value: ");
+        //    int index = int.Parse(Console.ReadLine());
+
+        //    arr[index] = 99;
+        //}
+
+        //static void DoSomeProtictiveCode()
+        //{
+        //    try
+        //    {
+        //        int x, y, z;
+        //        do
+        //        {
+        //            Console.WriteLine("please enter first number: ");
+        //        } while (!int.TryParse(Console.ReadLine(), out x));
+
+        //        do
+        //        {
+        //            Console.WriteLine("please enter last number: ");
+        //        } while (!int.TryParse(Console.ReadLine(), out y) || y == 0);
+
+        //        z = x / y;
+
+        //        Console.WriteLine($"result is : {z}");
+
+        //        int[] arr = { 1, 2, 3 };
+        //        int index;
+        //        do
+        //        {
+        //            Console.WriteLine("please enter index number to change it's value:");
+        //        } while (!int.TryParse(Console.ReadLine(), out index) || index < 0 || index >= arr.Length);
+        //        arr[index] = 99;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
+        #endregion
     }
+
+    #region Enums [labels]
+    //enum Days : int
+    //{
+    //    sat = 0,
+    //    sun = 1,
+    //    mon = 2,
+    //    tus = 3,
+    //    wed = 4,
+    //    thr = 5,
+    //    fri = 6
+    //}
+
+    //enum Gender : int
+    //{
+    //    Male = 1, male = 1, M = 1, m = 1, Female = 2, female = 2, F = 2, f = 2
+    //}
+
+    //enum Branches : byte // 0 => 255
+    //{
+    //    smartvally = 105, gamasa = 201, _6oct = 252, mansoura = 253, asyuit = 254, banha = 255
+    //}
+
+    //enum Menu
+    //{
+    //    Pizaa = 120,
+    //    Burger = 150,
+    //    Juice = 40,
+    //    Salad = 30,
+    //    Dessert = 60
+    //}
+
+    #region Permissions
+
+    #endregion
+    #endregion
 }
