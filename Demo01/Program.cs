@@ -994,6 +994,61 @@ namespace Demo01
             //Console.WriteLine((int) Gender.M);
             //Console.WriteLine((int) Gender.m);
             #endregion
+
+            #region Ex03 : permission
+            //Permission myp = Permission.write;
+            //Console.WriteLine(myp);
+
+            //myp = Permission.read;
+            //Console.WriteLine(myp);
+
+            //myp =(Permission) 3;
+            //Console.WriteLine(myp);
+
+            //myp = (Permission)15;
+            //Console.WriteLine(myp);
+
+            ////// If You Want To Add Permission, Do OR Operation
+            //myp |= Permission.read;
+            //Console.WriteLine(myp);
+
+
+            ////// If You Want To Remove (Deny) Permission, Do Nor operation
+            //myp &= ~Permission.read;
+            //Console.WriteLine(myp);
+
+            //myp &= ~Permission.delete;
+            //Console.WriteLine(myp);
+
+            //////If You Want To remove if exists or Add Permission if not exists, Do XOR Operation
+            //myp ^= Permission.read;
+            //Console.WriteLine(myp);  //write
+
+
+            //myp ^= Permission.delete;
+            //Console.WriteLine(myp); //write,delete
+
+
+            ////// Check Read Permission is existed inside MyP
+            //if((myp & Permission.read) == Permission.read)
+            //    Console.WriteLine("read permission is allowed");
+            //else
+            //    Console.WriteLine("read permission is denay");
+
+
+            //if ((myp & Permission.write) == Permission.write)
+            //    Console.WriteLine("write permission is allowed");
+            //else
+            //    Console.WriteLine("write permission is denay");
+
+            #region quiz
+            //write 3 class memeber methos
+            //function to add permissions => current permission , permission to add => my.addpermission()
+            //function to remove permissions
+            //function to check if permission exists return true else return false
+            #endregion
+
+            #endregion
             #endregion
         }
 
@@ -1230,6 +1285,9 @@ namespace Demo01
         //    }
         //}
         #endregion
+
+
+
     }
 
     #region Enums [labels]
@@ -1262,9 +1320,35 @@ namespace Demo01
     //    Salad = 30,
     //    Dessert = 60
     //}
-
     #region Permissions
+    class users
+    {
+        public int id;
+        public string name;
+        public Permission MyPermission; // 1 byte
+        // 1 byte => 8 permission
 
+        //public bool write;  // 1 byte
+        //public bool read;   // 1 byte
+        //public bool update; // 1 byte
+        //public bool delete; // 1 byte
+        //public bool execut; // 1 byte 
+        //public bool select; // 1 byte
+        //public bool select1; // 1 byte
+        //public bool select2; // 1 byte
+    }
+    //{1 , "ahmed" ,true,true,false,false,true,false}
+
+    [Flags] //dataannation (decrator) => learn new behavior to calc
+    enum Permission : byte
+    {
+        write = 1,
+        read = 2,
+        update = 4,
+        delete = 8,
+        execute = 16,
+        select = 32
+    }
     #endregion
     #endregion
 }
