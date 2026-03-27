@@ -1042,12 +1042,18 @@ namespace Demo01
             //    Console.WriteLine("write permission is denay");
 
             #region quiz
-            //write 3 class memeber methos
-            //function to add permissions => current permission , permission to add => my.addpermission()
-            //function to remove permissions
-            //function to check if permission exists return true else return false
+            //Permission myp = Permission.read;
+            ////write 3 class memeber methos
+            ////function to add permissions => current permission , permission to add => my.addpermission()
+            //AddPermission(ref myp, Permission.write, Permission.update);
+            //Console.WriteLine(myp);
+            ////function to remove permissions
+            //RemovePermission(ref myp,Permission.read,Permission.write);
+            //Console.WriteLine(myp);
+            ////function to check if permission exists return true else return false
+            //Console.WriteLine(PermissionCheck(myp, Permission.update) ? "permission is allowed" : "permission is denied");
+            //Console.WriteLine(PermissionCheck(myp, Permission.read) ? "permission is allowed" : "permission is denied");
             #endregion
-
             #endregion
             #endregion
         }
@@ -1287,7 +1293,36 @@ namespace Demo01
         #endregion
 
 
+        #region Enums
+        //write 3 class memeber methos
+        //function to add permissions => current permission , permission to add => my.addpermission()
+        static void AddPermission(ref Permission Current,params Permission[] ToAdd)
+        {
+            foreach (Permission Permission in ToAdd)
+            {
+                Current |= Permission;
+            }
 
+            //Console.WriteLine($"current is : {Current}");
+        }
+
+        //function to remove permissions
+        static void RemovePermission(ref Permission Current, params Permission[] ToRemove)
+        {
+            foreach (Permission Permission in ToRemove)
+            {
+                Current &= ~Permission;
+            }
+
+            //Console.WriteLine($"current is : {Current}");
+        }
+
+        //function to check if permission exists return true else return false
+        static bool PermissionCheck(Permission Current, Permission ToCheck)
+        {
+            return (Current & ToCheck) == ToCheck;
+        }
+        #endregion
     }
 
     #region Enums [labels]
