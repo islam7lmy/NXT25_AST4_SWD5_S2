@@ -26,7 +26,7 @@ namespace OOP
         #endregion
 
         #region 1. full property [attribute + property]
-        decimal salary;
+        decimal salary; //field
         public decimal Salary
         {
             get { return salary; }
@@ -34,7 +34,7 @@ namespace OOP
         }
         #endregion
         #region 2. automatic property [backingfield + property]
-        //private int age;
+        //int age;
 
         //public int Age
         //{
@@ -43,8 +43,10 @@ namespace OOP
         //}
 
         /// clr Will Generate Backing Field [Hidden Private Attribute]
-        public int Age { get; set; }
+        //public int Age; // field [Attribute]
+        public int Age { get; private set; }
 
+        /// deduction is 20% of salary
         public decimal Deductions { get { return Salary * .2m; } }
         #endregion
 
