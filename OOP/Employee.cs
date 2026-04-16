@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    internal struct Employee
+    internal struct Employee01
     {
         public int Id;
         // encapsulation : seprate the data defintion (attributes) from it's usage (GetterSetter or Property)
@@ -50,7 +50,7 @@ namespace OOP
         public decimal Deductions { get { return Salary * .2m; } }
         #endregion
 
-        public Employee(int _id, string _name, decimal _salary, int _age)
+        public Employee01(int _id, string _name, decimal _salary, int _age)
         {
             Id = _id;
             SetName(_name);

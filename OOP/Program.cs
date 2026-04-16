@@ -1,5 +1,6 @@
-﻿using Commen;
+﻿//using Commen;
 using OOP.Inhertiance;
+using OOP.PolyMorphism_OverRiding;
 using System;
 using System.Drawing;
 using System.Xml.Linq;
@@ -169,20 +170,190 @@ namespace OOP
 
             #region PolyMorphism
             #region Overlodaing
+            //int num1 = 10, num2 = 20;
+            //Sum(num1, num2); //two integer numbers
 
+            //double num3 = 10, num4 = 20;
+            //Sum(num3, num4);
+
+            //float num5 = 10, num6 = 20;
+            //Sum(num5, num6);
             #endregion
             #region OverRiding
-            /// static binded
+            //TypeA typeA = new TypeA(10);
+            //typeA.MyFun01();
+            //typeA.MyFun02();
 
-            ///dynamic binded
+            //TypeB typeB = new TypeB(10,20);
+            //typeB.MyFun01();
+            //typeB.MyFun02();
             #endregion
             #endregion
 
             #region Binding
+            //Employee emp;
+            /////allocat 4 bytes for reference from type employee refere to null
 
+            //emp = new Employee();
+            ///// allocat object in heap
+
+            #region What is binding
+            /// reference from base type => object from drived type
+            //Employee emp01 = new FullTimeEmployee(); //binding
+            //emp01.Id = 10;
+            //emp01.Name = "ahmed";
+            //emp01.Age = 30;
+            ////emp01.Salary = 10; //notvalid
+            //emp01.MyFun01();
+            //emp01.MyFun02();
+
+            //Employee emp02 = new PartTimeEmployee(); //binding
+            //emp02.Id = 10;
+            //emp02.Name = "ahmed";
+            //emp02.Age = 30;
+            ////emp02.HourRate = 10; //notvalid
+            ////emp02.CountOfHours = 10; //notvalid
+            //emp02.MyFun01();
+            //emp02.MyFun02();
+
+            //Employee emp03 = new FreeLanceEmployee(); //binding
+            //emp03.Id = 10;
+            //emp03.Name = "ahmed";
+            //emp03.Age = 30;
+            ////emp03.Project = 10; //notvalid
+            //emp03.MyFun01();
+            //emp03.MyFun02();
+            #endregion
+
+            #region NotBinding
+            //FullTimeEmployee fullTimeEmployee01 = (FullTimeEmployee)new Employee(); //not binding
+
+            #endregion
+
+            #region Why binding
+            //int x = 5;
+            //int y = 10;
+            //y = x;
+            //y = 30;
+            //Console.WriteLine(x); //5
+
+            //FullTimeEmployee fullTimeEmployee01 = new FullTimeEmployee();
+
+            //FullTimeEmployee fullTimeEmployee02 = new FullTimeEmployee();
+
+            //fullTimeEmployee02 = fullTimeEmployee01;/// will copy address
+
+            //Employee employee01 = fullTimeEmployee01; /// will copy address
+
+            ////int y = 15;
+            ////object x = y;
+            //object xx = new FullTimeEmployee();
+            ////ProcessEmployee(employee01);
+
+            FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
+            ProcessEmployee(fullTimeEmployee);
+            ///myfun01(); // static => will run ralted to reference
+            ///myfun02(); // dynamic => will run ralted to object
+
+
+            fullTimeEmployee.MyFun01();
+            fullTimeEmployee.MyFun02();
+
+            //PartTimeEmployee partTimeEmployee = new PartTimeEmployee();
+            //ProcessEmployee(partTimeEmployee);
+            /////myfun01(); // dynamic => will run ralted to object
+            /////myfun02(); // static => will run ralted to reference
+
+            //FreeLanceEmployee freeLanceEmployee = new FreeLanceEmployee();
+            //ProcessEmployee(freeLanceEmployee);
+            /////myfun01(); // dafult => will run ralted to reference
+            /////myfun02(); // dafult => will run ralted to reference
+            #endregion
             #endregion
         }
 
+        #region PolyMorphism 1. function overloading
+        ///1. datatype of paramaters
+        ///2. Count number of paramaters
+        ///3. reorder paramaters if not same datatype
+
+        public static int Sum(int x, int y)
+        {
+            return x + y;
+        }
+
+        public static int Sum(int y, short x)
+        {
+            return x + y;
+        }
+
+        public static int Sum(short y, int x)
+        {
+            return x + y;
+        }
+
+        public static int Sum(int x, int y, int z)
+        {
+            return x + y + z;
+        }
+
+        public static int Sum(double x, double y)
+        {
+            return (int)(x + y);
+        }
+
+        public static int Sum(float x, float y)
+        {
+            return (int)(x + y);
+        }
+
+        public static double SumDoubles(double x, double y)
+        {
+            return x + y;
+        }
+
+        public static float SumFloat(float x, float y)
+        {
+            return x + y;
+        }
+        #endregion
+
+
+        #region Binding
+        public static void ProcessEmployee(Employee emp)
+        {
+            if (emp is not null)
+            {
+                emp.MyFun01();
+                emp.MyFun02();
+            }
+        }
+
+        //public static void ProcessEmployee(FullTimeEmployee emp)
+        //{
+        //    if(emp is not null)
+        //    {
+        //        emp.MyFun01();
+        //        emp.MyFun02();
+        //    }
+        //}
+        //public static void ProcessEmployee(PartTimeEmployee emp)
+        //{
+        //    if (emp is not null)
+        //    {
+        //        emp.MyFun01();
+        //        emp.MyFun02();
+        //    }
+        //}
+        //public static void ProcessEmployee(FreeLanceEmployee emp)
+        //{
+        //    if (emp is not null)
+        //    {
+        //        emp.MyFun01();
+        //        emp.MyFun02();
+        //    }
+        //}
+        #endregion
 
     }
 }
