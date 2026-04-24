@@ -1,5 +1,6 @@
 ﻿//using Commen;
 using OOP.Inhertiance;
+using OOP.InterFaces;
 using OOP.PolyMorphism_OverRiding;
 using System;
 using System.Drawing;
@@ -250,14 +251,14 @@ namespace OOP
             //object xx = new FullTimeEmployee();
             ////ProcessEmployee(employee01);
 
-            FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
-            ProcessEmployee(fullTimeEmployee);
-            ///myfun01(); // static => will run ralted to reference
-            ///myfun02(); // dynamic => will run ralted to object
+            //FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
+            //ProcessEmployee(fullTimeEmployee);
+            /////myfun01(); // static => will run ralted to reference
+            /////myfun02(); // dynamic => will run ralted to object
 
 
-            fullTimeEmployee.MyFun01();
-            fullTimeEmployee.MyFun02();
+            //fullTimeEmployee.MyFun01();
+            //fullTimeEmployee.MyFun02();
 
             //PartTimeEmployee partTimeEmployee = new PartTimeEmployee();
             //ProcessEmployee(partTimeEmployee);
@@ -268,6 +269,80 @@ namespace OOP
             //ProcessEmployee(freeLanceEmployee);
             /////myfun01(); // dafult => will run ralted to reference
             /////myfun02(); // dafult => will run ralted to reference
+            #endregion
+
+            #region More Practise on Binding
+            //TypeA typeA = new TypeC(1, 2, 3);
+            //typeA.A = 11;
+            ////typeA.B = 22; //not valid
+            ////typeA.C = 33; //not valid
+            //typeA.MyFun01(); // out put //I am Base [Parent]
+            //typeA.MyFun02(); // out put //TypeC : A = 11 , B = 2 , C = 3
+
+            //TypeB typeB = new TypeC(1, 2, 3);
+            //typeB.A = 11;
+            //typeB.B = 22;
+            ////typeB.C = 33; //not valid
+            //typeB.MyFun01(); // out put //I am Base [Child]
+            //typeB.MyFun02(); // out put //TypeC : A = 11 , B = 22 , C = 3
+
+            //TypeA typeA = new TypeD(1, 2, 3, 4);//TypeC : A = 1 , B = 22 , C = 3
+            //TypeB typeB = new TypeD(1, 2, 3, 4);//TypeC : A = 1 , B = 22 , C = 3
+            //TypeC typeC = new TypeD(1, 2, 3, 4);//TypeC : A = 1 , B = 22 , C = 3
+
+            //typeA.MyFun02();
+            //typeB.MyFun02();
+            //typeC.MyFun02();
+
+
+            //TypeA typeA1 = new TypeE(1,2,3,4,5);
+            //TypeB typeB1 = new TypeE(1,2,3,4,5);
+            //TypeC typeC1 = new TypeE(1,2,3,4,5);
+            //TypeD typeD1 = new TypeD(1, 2, 3, 4);
+            //TypeD typeD2 = new TypeE(1, 2, 3, 4, 5);
+            //TypeD typeD3 = new TypeF(1, 2, 3, 4, 5);
+
+            //typeA1.MyFun02();//TypeC : A = 1 , B = 22 , C = 3
+            //typeB1.MyFun02();//TypeC : A = 1 , B = 22 , C = 3
+            //typeC1.MyFun02();//TypeC : A = 1 , B = 22 , C = 3
+            //typeD1.MyFun02();//TypeD : A = 1 , B = 2 , C = 3 , D = 4
+            //typeD2.MyFun02();//TypeE : A = 1 , B = 2 , C = 3 , D = 4 , E = 5
+            //typeD3.MyFun02();//TypeE : A = 1 , B = 2 , C = 3 , D = 4
+
+
+            #endregion
+
+            #endregion
+
+            #region InterFaces
+            #region Ex01
+            //IMyType myType = new IMyType(); //notvalid
+            //myType.Salary = 20;
+            //myType.MyFun();
+
+            //IMyType myType = new MyType(); //binding
+            //IMyType myType = new MyTypev2(); //binding
+            //myType.Salary = 20;
+            //myType.MyFun();
+            //myType.Print();
+
+            //MyType myType01 = new MyType(); //binding
+            //myType01.Salary = 20;
+            //myType01.MyFun();
+            //myType01.Print();//not valid
+            #endregion
+            #region Ex02
+            //SeriesByTwo series02 = new SeriesByTwo();
+            //Print10NumbersFromSeries(series02);
+
+            //SeriesByThree series03 = new SeriesByThree();
+            //Print10NumbersFromSeries(series03);
+
+            //SeriesByFive series05 = new SeriesByFive();
+            //Print10NumbersFromSeries(series05);
+
+            //SeriesBySix series06 = new SeriesBySix();
+            //Print10NumbersFromSeries(series06);
             #endregion
             #endregion
         }
@@ -351,6 +426,53 @@ namespace OOP
         //    {
         //        emp.MyFun01();
         //        emp.MyFun02();
+        //    }
+        //}
+        #endregion
+
+        #region Interfaces
+        public static void Print10NumbersFromSeries(ISeries series)
+        {
+            if(series is not null)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.Write(series.Current);
+                    Console.Write("\t");
+                    series.GetNext();
+                }
+                series.Reset();
+                Console.WriteLine();
+            }
+        }
+
+        //public static void Print10NumbersFromSeries(SeriesByThree series)
+        //{
+        //    if (series is not null)
+        //    {
+        //        for (int i = 0; i < 10; i++)
+        //        {
+        //            Console.Write(series.Current);
+        //            Console.Write("\t");
+        //            series.GetNext();
+        //        }
+        //        series.Reset();
+        //        Console.WriteLine();
+        //    }
+        //}
+
+        //public static void Print10NumbersFromSeries(SeriesByFour series)
+        //{
+        //    if (series is not null)
+        //    {
+        //        for (int i = 0; i < 10; i++)
+        //        {
+        //            Console.Write(series.Current);
+        //            Console.Write("\t");
+        //            series.GetNext();
+        //        }
+        //        series.Reset();
+        //        Console.WriteLine();
         //    }
         //}
         #endregion

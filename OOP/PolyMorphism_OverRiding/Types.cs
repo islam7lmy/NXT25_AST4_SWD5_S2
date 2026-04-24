@@ -51,4 +51,63 @@ namespace OOP.PolyMorphism_OverRiding
             Console.WriteLine($"TypeB : A = {A} , B = {B}");
         }
     }
+
+    class TypeC : TypeB
+    {
+        public int C { get; set; }
+
+        public TypeC(int _A, int _B, int _C) : base (_A , _B)
+        {
+            C = _C;
+        }
+
+        public new void Myfun01()
+        {
+            Console.WriteLine("I am Grand Child");
+        }
+
+        public override void MyFun02()
+        {
+            Console.WriteLine($"TypeC : A = {A} , B = {B} , C = {C}");
+        }
+    }
+
+    class TypeD : TypeC
+    {
+        public int D { get; set; }
+        public TypeD(int _A, int _B, int _C, int _D) : base(_A, _B, _C)
+        {
+            D = _D;
+        }
+
+        public new virtual void MyFun02()
+        {
+            Console.WriteLine($"TypeD : A = {A} , B = {B} , C = {C} , D = {D}");
+        }
+    }
+
+    class TypeE : TypeD
+    {
+        public int E { get; set; }
+        public TypeE(int _A, int _B, int _C, int _D, int _E) : base(_A, _B, _C, _D)
+        {
+            E = _E;
+        }
+
+        public override void MyFun02()
+        {
+            Console.WriteLine($"TypeE : A = {A} , B = {B} , C = {C} , D = {D} , E = {E}");
+        }
+    }
+
+    class TypeF: TypeD
+    {
+        public int F { get; set; }
+        public TypeF(int _A, int _B, int _C, int _D, int _F) : base(_A, _B, _C, _D)
+        {
+            F = _F;
+        }
+
+    }
+
 }
