@@ -344,6 +344,128 @@ namespace OOP
             //SeriesBySix series06 = new SeriesBySix();
             //Print10NumbersFromSeries(series06);
             #endregion
+            #region Implment Interface Implicitly Vs Implment Interface Explicitly
+            //InterFaces.Car car = new InterFaces.Car();
+            //car.Speed = 20;
+            //car.Backward();
+            //car.Forward();
+            //car.Right();
+            //car.Left();
+
+
+            //AirPlan plan = new AirPlan();
+            //plan.Speed = 80;
+            ////plan.Backward(); // not valid //explicit implmintation
+
+            //IMoveable moveablePlan = plan;
+            //moveablePlan.Backward();
+            //moveablePlan.Forward();
+            //moveablePlan.Right();
+            //moveablePlan.Left();
+
+            //IFlayable flayablePlan = plan;
+            //flayablePlan.Backward();
+            //flayablePlan.Forward();
+            //flayablePlan.Right();
+            //flayablePlan.Left();
+            #endregion
+            #region Shallow Copy vs Deep Copy
+            //int x = 10;
+            //int y = 20;
+            //y = x;
+            //y = 30;
+            //Console.WriteLine(x);
+            //Console.WriteLine(y);
+
+            //int[] Arr01 = { 1, 2, 3 };
+            //int[] Arr02 = { 4, 5, 6 };
+
+            //Console.WriteLine($"Arr01 = {Arr01.GetHashCode()}");
+            //Console.WriteLine($"Arr02 = {Arr02.GetHashCode()}");
+
+            #region Shallow Copy
+            //Arr02 = Arr01;
+            //Console.WriteLine("After Shallow Copy");
+            //Console.WriteLine($"Arr01 = {Arr01.GetHashCode()}");
+            //Console.WriteLine($"Arr02 = {Arr02.GetHashCode()}");
+            //Arr02[0] = 90; 
+            #endregion
+
+            #region Deep Copy
+            //int[] test = (int[]) (new object());
+            //Arr02 = (int[]) Arr01.Clone();
+            //Console.WriteLine("After Deep Copy");
+            //Console.WriteLine($"Arr01 = {Arr01.GetHashCode()}");
+            //Console.WriteLine($"Arr02 = {Arr02.GetHashCode()}");
+            //Arr02[0] = 90;
+            #endregion
+
+            //foreach (int i in Arr01)
+            //{
+            //    Console.Write(i);
+            //    Console.Write("\t");
+            //}
+            //Console.WriteLine();
+            //foreach (int i in Arr02)
+            //{
+            //    Console.Write(i);
+            //    Console.Write("\t");
+            //}
+            #endregion
+
+            #region Built-In Interface ICloneable
+            //InterFaces.Employee emp01 = new InterFaces.Employee();
+            //emp01.Id = 20;
+            //emp01.Name = "ahmed";
+            //emp01.Salary = 8000;
+            //emp01.Address = "Cairo";
+
+
+            //InterFaces.Employee emp02 = new InterFaces.Employee()
+            //{
+            //    Id = 10,
+            //    Name = "Ali",
+            //    Salary = 4000,
+            //    Address = "Alex"
+            //};
+
+            //Console.WriteLine($"Emp01: {emp01.GetHashCode()}");
+            //Console.WriteLine($"Emp02: {emp02.GetHashCode()}");
+
+            #region Shallow copy
+            //emp02 = emp01;
+            //Console.WriteLine("After shallow");
+            //Console.WriteLine($"Emp01: {emp01.GetHashCode()}");
+            //Console.WriteLine($"Emp02: {emp02.GetHashCode()}"); 
+            #endregion
+            #region Deep Copy
+            //emp02 = InterFaces.Employee.DeepCopy(emp01);
+            //emp02 = new InterFaces.Employee(emp01);
+            //emp02 = (InterFaces.Employee) emp01.Clone();
+            //Console.WriteLine("After Deep");
+            //Console.WriteLine($"Emp01: {emp01.GetHashCode()}");
+            //Console.WriteLine($"Emp02: {emp02.GetHashCode()}");
+            #endregion
+            //emp02.Id = 99;
+            //Console.WriteLine($"Emp01: {emp01}");
+            //Console.WriteLine($"Emp02: {emp02}");
+            #endregion
+
+            #region Built-In Interface IComparable
+
+            #endregion
+            #endregion
+
+            #region Abstract
+
+            #endregion
+
+            #region Operator Overloading
+
+            #endregion
+
+            #region User-Defined Casting Operator
+
             #endregion
         }
 
@@ -395,7 +517,7 @@ namespace OOP
 
 
         #region Binding
-        public static void ProcessEmployee(Employee emp)
+        public static void ProcessEmployee(PolyMorphism_OverRiding.Employee emp)
         {
             if (emp is not null)
             {
@@ -433,7 +555,7 @@ namespace OOP
         #region Interfaces
         public static void Print10NumbersFromSeries(ISeries series)
         {
-            if(series is not null)
+            if (series is not null)
             {
                 for (int i = 0; i < 10; i++)
                 {
