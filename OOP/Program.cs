@@ -1,6 +1,9 @@
 ﻿//using Commen;
+using Microsoft.VisualBasic;
+using OOP.Abstraction;
 using OOP.Inhertiance;
 using OOP.InterFaces;
+using OOP.Operator_Overloading;
 using OOP.PolyMorphism_OverRiding;
 using System;
 using System.Drawing;
@@ -452,16 +455,84 @@ namespace OOP
             #endregion
 
             #region Built-In Interface IComparable
+            //double[] arr = { 9, 8, 11, 7, 2, 3, 4, 5, 1 };
+            //Array.Sort(arr);
+            //foreach (int i in arr)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    for (int j = 0; j < arr.Length - i - 1; j++)
+            //    {
+            //        if (arr[j] > arr[j + 1])
+            //            Swap(ref arr[j], ref arr[j + 1]);
+            //    }
+            //}
+
+            //foreach (int i in arr)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            //string[] strings = { "omr", "Ahmed", "Ali", };
+            ////Array.Sort(strings);
+            //for (int i = 0; i < strings.Length; i++)
+            //{
+            //    for (int j = 0; j < strings.Length - i - 1; j++)
+            //    {
+            //        if (strings[j].CompareTo(strings[j + 1]) > 0)
+            //            Swap(ref strings[j], ref strings[j + 1]);
+            //    }
+            //}
+            //foreach (string s in strings) Console.WriteLine(s);
+
+
+            //InterFaces.Employee[] employees =
+            //{
+            //    new InterFaces.Employee() { Id = 10 , Name = "Ahmed" , Address = "Cairo", Salary = 10_000},
+            //    new InterFaces.Employee() { Id = 20 , Name = "Ali" , Address = "Alex", Salary = 4_000},
+            //    new InterFaces.Employee() { Id = 30 , Name = "Omar" , Address = "Asyut", Salary = 8_000},
+            //    new InterFaces.Employee() { Id = 40 , Name = "Amr" , Address = "Fayoum", Salary = 5_000},
+            //};
+
+            //Array.Sort(employees);
+            //for (int i = 0; i < employees.Length; i++)
+            //{
+            //    for (int j = 0; j < employees.Length - i - 1; j++)
+            //    {
+            //        if (employees[j].CompareTo(employees[j + 1]) > 0)
+            //            Swap(ref employees[j], ref employees[j + 1]);
+            //    }
+            //}
+
+            //foreach (var employee in employees)
+            //{
+            //    Console.WriteLine(employee);
+            //}
 
             #endregion
             #endregion
 
             #region Abstract
+            //Shape shape = new Shape(); //not valid
+            //shape.CalcArea();
 
+            //Shape shape = new Squere();
+            //shape.Dim01 = 10;
+            //Console.WriteLine(shape.Perimeter);
+            //Console.WriteLine(shape.CalcArea());
             #endregion
 
             #region Operator Overloading
+            Complex c1 = new Complex(1, 2);
+            Complex c2 = new Complex(3, 4);
+            Complex c3 = new Complex(5, 6);
+            Complex c5 = default;
 
+            Complex c4 = c1 + c2 + c3 + c5;
+            Console.WriteLine(c4);
             #endregion
 
             #region User-Defined Casting Operator
@@ -514,7 +585,6 @@ namespace OOP
             return x + y;
         }
         #endregion
-
 
         #region Binding
         public static void ProcessEmployee(PolyMorphism_OverRiding.Employee emp)
@@ -597,7 +667,61 @@ namespace OOP
         //        Console.WriteLine();
         //    }
         //}
+
+
+        public static void Swap(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        public static void Swap(ref string a, ref string b)
+        {
+            string temp = a;
+            a = b;
+            b = temp;
+        }
+        public static void Swap(ref InterFaces.Employee a, ref InterFaces.Employee b)
+        {
+            InterFaces.Employee temp = a;
+            a = b;
+            b = temp;
+        }
         #endregion
 
+        #region Abstract
+        public static void ProcedShape(Shape shape)
+        {
+            if (shape is not null)
+            {
+                Console.WriteLine(shape.Perimeter);
+                Console.WriteLine(shape.CalcArea());
+            }
+        }
+        //public static void ProcedShape(Squere shape)
+        //{
+        //    if(shape is not null)
+        //    {
+        //        Console.WriteLine(shape.Perimeter);
+        //        Console.WriteLine(shape.CalcArea());
+        //    }
+        //}
+        //public static void ProcedShape(Abstraction.Rectangle shape)
+        //{
+        //    if (shape is not null)
+        //    {
+        //        Console.WriteLine(shape.Perimeter);
+        //        Console.WriteLine(shape.CalcArea());
+        //    }
+        //}
+        //public static void ProcedShape(Circle shape)
+        //{
+        //    if (shape is not null)
+        //    {
+        //        Console.WriteLine(shape.Perimeter);
+        //        Console.WriteLine(shape.CalcArea());
+        //    }
+        //}
+        #endregion
     }
 }
