@@ -526,17 +526,56 @@ namespace OOP
             #endregion
 
             #region Operator Overloading
-            Complex c1 = new Complex(1, 2);
-            Complex c2 = new Complex(3, 4);
-            Complex c3 = new Complex(5, 6);
-            Complex c5 = default;
+            //Complex c1 = new Complex(1, 2);
+            //Complex c2 = new Complex(3, 4);
+            //Complex c3 = new Complex(5, 6);
+            //Complex c5 = default;
 
-            Complex c4 = c1 + c2 + c3 + c5;
-            Console.WriteLine(c4);
+            //Complex c4 = c1 + c2 + c3 + c5;
+            //Console.WriteLine(c4);
+
+            //Console.WriteLine(c1++); //print => 1+2i then value => 2+3i
+            //Console.WriteLine(++c1); //value => 3+4i then print => 3+4i 
+            //Console.WriteLine(--c1); //value => 2+3i then print => 2+3i
+            //Console.WriteLine(c1--); //print => 2+3i then value => 1+2i
+            //Console.WriteLine(c1); // print => 1+2i
+
+            //int x = 5;
+            //int result = x++ + ++x;
+            //int a = x++; // a => 5 then x => 6
+            //int b = ++x; // x => 7 then b => 7
+            //int result2 = a + b;
+
+            //Console.WriteLine(result);
+
             #endregion
 
             #region User-Defined Casting Operator
+            //int x = 5;
+            //x.add(2);
+            //hamada.add(x, 2);
+            //double y = 15;
+            //x = (int)y; //explicit cast [unsafe]
+            //y = x; //implicit
 
+            //Operator_Overloading.Employee emp = new Operator_Overloading.Employee()
+            //{
+            //    Id = 102030,
+            //    FirstName = "Ahmed",
+            //    LastName = "Mohmed",
+            //    BirthDate = new DateOnly(2010, 03, 15),
+            //    Salary = 3_000,
+            //    Address = "13, el galaa street, front of Mansoura university gate",
+            //    City = "Mansoura",
+            //    Country = "Egypt"
+            //};
+
+            ////EmployeeViewModel empview =(EmployeeViewModel) emp;
+            ////EmployeeViewModel empview = emp;
+            ////EmployeeViewModel empview = new EmployeeViewModel(emp);
+            ////EmployeeViewModel empview = emp.ToEmployeeViewModel();
+
+            //Console.WriteLine(empview);
             #endregion
         }
 
@@ -723,5 +762,13 @@ namespace OOP
         //    }
         //}
         #endregion
+    }
+
+    static class hamada
+    {
+        public static void add(this int a, int value)
+        {
+            a += value;
+        }
     }
 }
