@@ -1,10 +1,13 @@
 ﻿//using Commen;
 using Microsoft.VisualBasic;
 using OOP.Abstraction;
+using OOP.Generics;
 using OOP.Inhertiance;
 using OOP.InterFaces;
 using OOP.Operator_Overloading;
 using OOP.PolyMorphism_OverRiding;
+using OOP.Sealed;
+using OOP.Static;
 using System;
 using System.Drawing;
 using System.Xml.Linq;
@@ -577,6 +580,116 @@ namespace OOP
 
             //Console.WriteLine(empview);
             #endregion
+
+            #region static
+            //Utility.PI = 3.14;
+            //Console.WriteLine(Utility.CalcCircleArea(10)); 
+            #endregion
+
+            #region Sealed
+            //Sealed.Parent p = new Sealed.Parent();
+            //p.Salary = 10000;
+
+            //Sealed.Child c = new Sealed.Child();
+            //c.Salary = 15000;
+
+            //GrandChild grandChild = new GrandChild();
+            //grandChild.Salary = 1515151515;
+            //grandChild.Print();
+            #endregion
+
+            #region Partials
+            //Partiales.Employee emp = new Partiales.Employee();
+            //emp.Id = 10;
+            //emp.Name = "Ahmed";
+            //emp.Salary = 1000000;
+            //emp.Address = "asyut";
+            //emp.Age = 15;
+            //emp.City = "Cairo";
+            //emp.Country = "Egypt";
+            #endregion
+
+            #region Generics
+            #region EX:01 Swap
+            #region NonGenerics
+            //int num1 = 10, num2 = 20;
+            //object obj1 = num1, obj2 = num2; //boxing
+            ////Helper.Swap(ref num1, ref num2);
+            //Helper.Swap(ref obj1, ref obj2);
+            //num1 =(int) obj1; //unboxing => [unsafe casting]
+            //num2 =(int) obj2; //unboxing => [unsafe casting]
+            //Console.WriteLine($"num1 : {num1} , num2 : {num2}");
+
+
+            //int num1 = 10;
+            //double num2 = 20;
+            //object obj1 = num1, obj2 = num2; //boxing
+            ////Helper.Swap(ref num1, ref num2);
+            //Helper.Swap(ref obj1, ref obj2);
+            //num1 = (int)obj1; //unboxing => [unsafe casting]
+            //num2 = (double)obj2; //unboxing => [unsafe casting]
+            //Console.WriteLine($"num1 : {num1} , num2 : {num2}");
+
+
+            //double num3 = 10.25, num4 = 20.40;
+            //object obj3 = num3, obj4 = num4;
+            ////Helper.Swap(ref num3, ref num4);
+            //Helper.Swap(ref obj3, ref obj4);
+            //num3 = (double)obj3;
+            //num4 = (double)obj4;
+            //Console.WriteLine($"num3 : {num3} , num4 : {num4}");
+
+
+            //string str1 = "Ahmed", str2 ="Mohmed";
+            //object obj5 = str1, obj6 = str2;
+            ////Helper.Swap(ref str1, ref str2);
+            //Helper.Swap(ref obj5, ref obj6);
+            //str1 = (string)obj5;
+            //str2 = (string)obj6;
+            //Console.WriteLine($"str1 : {str1} , str2 : {str2}"); 
+            #endregion
+
+
+            #region Generics
+            //int num1 = 10, num2 = 20;
+            ////Helper.Swap<int>(ref num1, ref num2);
+            //Helper.Swap(ref num1, ref num2);
+            //Console.WriteLine($"num1 : {num1} , num2 : {num2}");
+
+            //string str1 = "Ahmed", str2 = "Mohmed";
+            ////Helper.Swap<string>(ref str1, ref str2);
+            //Helper.Swap(ref str1, ref str2);
+            //Console.WriteLine($"str1 : {str1} , str2 : {str2}");
+
+            //int num1 = 10;
+            //double num2 = 20;
+            //Helper.Swap<int>(ref num1, ref num2); 
+            #endregion
+            #endregion
+            #region EX:02 Search
+            //int[] numbers = { 5, 3, 2, 19, 4, 10, 1, 4 };
+            //int postion = Array.IndexOf(numbers, 10);
+            //int postion2 = Helper.SearchArray(numbers, 10);
+            //Console.WriteLine(postion);
+            //Console.WriteLine(postion2);
+
+            Generics.Point[] points =
+            {
+                new Generics.Point(0,0),
+                new Generics.Point(1,0),
+                new Generics.Point(2,0),
+                new Generics.Point(3,0),
+                new Generics.Point(4,0),
+                new Generics.Point(5,0),
+            };
+
+            int postion = Array.IndexOf(points, new Generics.Point(3, 0));
+            int postion2 = Helper.SearchArray(points, new Generics.Point(3, 0));
+            Console.WriteLine(postion);
+            Console.WriteLine(postion2);
+            #endregion
+            #endregion
+
         }
 
         #region PolyMorphism 1. function overloading
