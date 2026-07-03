@@ -27,33 +27,44 @@ namespace EFCore.Entities
 
 
     #region 2. Data Annotations
-    [Table("EmployeesInfo", Schema = "dbo")]
+    //[Table("EmployeesInfo", Schema = "dbo")]
+    //internal class Employee
+    //{
+    //    [Key]
+    //    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    //    public int Id { get; set; } //primary key by convention identity(1,1) int not allow null
+
+    //    [Required]
+    //    [Column(TypeName = "varchar")]
+    //    [MaxLength(100)]
+    //    public string? Name { get; set; } // nvarchar(max)  allow null
+
+    //    [DataType(DataType.Currency)]
+    //    public double Salary { get; set; } // float not allow null
+
+    //    [Range(22, 60)]
+    //    public int? Age { get; set; } // int allow null
+
+    //    [DataType(DataType.EmailAddress)]
+    //    [EmailAddress]
+    //    public string Email { get; set; }
+
+    //    [NotMapped]
+    //    public int test { get; set; }
+
+    //    public double NetSalary { get { return Salary * .9; } }
+
+    //}
+    #endregion
+
+
+    #region 3. Fluent API
     internal class Employee
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; } //primary key by convention identity(1,1) int not allow null
-
-        [Required]
-        [Column(TypeName = "varchar")]
-        [MaxLength(100)]
-        public string? Name { get; set; } // nvarchar(max)  allow null
-
-        [DataType(DataType.Currency)]
-        public double Salary { get; set; } // float not allow null
-
-        [Range(22, 60)]
-        public int? Age { get; set; } // int allow null
-
-        [DataType(DataType.EmailAddress)]
-        [EmailAddress]
-        public string Email { get; set; }
-
-        [NotMapped]
-        public int test { get; set; }
-
-        public double NetSalary { get { return Salary * .9; } }
-
+        public int Id { get; set; }
+        public string? Name { get; set; } 
+        public double Salary { get; set; }
+        public int? Age { get; set; } 
     }
     #endregion
 
